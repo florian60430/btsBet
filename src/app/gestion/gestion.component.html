@@ -1,0 +1,20 @@
+<section class="annonce">
+<li [ngClass]="{'list-group-item' : true,
+                'list-group-item-danger': annonceStatus === 'Terminé',
+                'list-group-item-success active': annonceStatus === 'En cours'}">
+    <h4> {{ annonceName }} -- Status : {{ getAnnonceStatus() }} <span class="details"><a [routerLink]="[annonceId]">
+                Modifier</a></span> </h4>
+    <span class="btn-paris"><button class="btn btn-success padding" (click)="addParisFini(annonceId, 'oui', annonceCote1)">Oui
+            <div class="cote">{{ annonceCote1 }}</div>
+        </button></span>
+    <span class="btn-paris"><button class="btn btn-danger padding" 
+        (click)="addParisFini(annonceId, 'oui', annonceCote1)">Non
+            <div class="cote">{{annonceCote2}}</div>
+        </button></span>
+    <input type="text" class="form-control" [(ngModel)]="annonceName">
+    <button class="btn-primary margin" (click)="onSwitchEnCours()">En cours</button>
+    <button class="btn-danger margin" (click)="onSwitchTerminer()">Terminé</button>
+    <button class="btn-success margin" (click)="onSwitchAvenir()">A venir</button>
+    <button class="btn-danger margin delete" (click)="onDelete()">Supprimer</button>
+</li>
+</section>

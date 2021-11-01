@@ -1,0 +1,14 @@
+<app-credits></app-credits>
+<section class="paris">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2> Les paris </h2>
+      mis à jour le : {{ lastUpdate | async }}
+      <ul class="list-group">
+        <app-annonces *ngFor="let annonce of annonces; let i = index" [indexOfAnnonce]="i" [annonceName]="annonce.title" [annonceId]="annonce.id"
+          [annonceStatus]="annonce.status"
+          [annonceCote1]="annonce.cote1" [annonceCote2]="annonce.cote2" [id]="annonce.id"></app-annonces>
+      </ul>
+    </div>
+  </div>
+</section>

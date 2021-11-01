@@ -1,0 +1,23 @@
+<section class="paris">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2> Les paris </h2>
+        mis à jour le : {{ lastUpdate | async }}
+        <ul class="list-group">
+          <app-gestion *ngFor="let annonce of annonces; let i = index" [indexOfAnnonce]="i" [annonceName]="annonce.title" [annonceId]="annonce.id"
+            [annonceStatus]="annonce.status"
+            [annonceCote1]="annonce.cote1" [annonceCote2]="annonce.cote2" [id]="annonce.id"></app-gestion>
+        </ul>
+      </div>
+    </div>
+    <!--  <button routerLink="/create" class="btn btn-warning newParis">Nouveau Paris</button> -->
+  </section>
+  <section>
+    <div class="btn-admin">
+      <button class="btn btn-primary margin" (click)="onEnCours()">En cours</button>
+      <button class="btn btn-danger margin" (click)="onTerminer()">Terminé</button>
+      <button class="btn btn-success margin" (click)="onAvenir()">A venir</button>
+      <button class="btn btn-warning margin" (click)="onSave()">Sauvegarder</button>
+      <button class="btn btn-dark margin" (click)="onFetch()">Charger</button> 
+    </div>
+  </section>

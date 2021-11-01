@@ -1,0 +1,15 @@
+<section class="annonce">
+    <li [ngClass]="{'list-group-item' : true,
+                'list-group-item-danger disabled': annonceStatus === 'Terminé',
+                'list-group-item-success active': annonceStatus === 'En cours'}">
+        <h4> {{ annonceName }} -- Status : {{ getAnnonceStatus() }} </h4>
+        <span class="btn-paris"><button class="btn btn-success padding" [disabled]="annonceStatus == 'Terminé'"
+                (click)="AddParisCoteNon(annonceId, annonceCote1, 500)">Oui
+                <div class="cote">{{ annonceCote1 }}</div>
+            </button></span>
+        <span class="btn-paris"><button class="btn btn-danger padding" [disabled]="annonceStatus == 'Terminé'"
+                (click)="AddParisCoteNon(annonceId, annonceCote2, 500)">Non
+                <div class="cote">{{annonceCote2}}</div>
+            </button></span>
+    </li>
+</section>

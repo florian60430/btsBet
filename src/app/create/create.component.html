@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="name">
+            Nom du paris
+          </label>
+          <input type="text" id="name" class="form-control" name="name" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name">
+              1ère cotre :
+            </label>
+            <input type="number" id="cote1" class="form-control" name="cote1" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="name">
+              2ème cote
+            </label>
+            <input type="number" id="cote2" class="form-control" name="cote2" ngModel required>
+          </div>
+        <div class="form-group">
+          <label for="status">
+            État du paris
+          </label>
+          <select id="status" class="form-control" name="status" [ngModel]="defaultState">
+            <option value="En cours">En cours</option>
+            <option value="Terminé">Terminé</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Enregistrer</button>
+      </form>
+    </div>
+  </div>
